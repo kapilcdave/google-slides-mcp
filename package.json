@@ -1,0 +1,53 @@
+{
+  "name": "google-slides-mcp",
+  "version": "0.1.0",
+  "description": "Open-source MCP server for Google Slides — build and edit decks with any AI model.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "google-slides-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "auth": "tsx scripts/auth.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.scripts.json",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "google-slides",
+    "slides",
+    "presentation",
+    "ai",
+    "claude",
+    "llm"
+  ],
+  "author": "Kapil Dave",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kapilcdave/google-slides-mcp.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "dotenv": "^18.0.8",
+    "googleapis": "^187.0.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
